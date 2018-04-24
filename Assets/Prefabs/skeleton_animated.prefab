@@ -2092,6 +2092,7 @@ MonoBehaviour:
   currentHealth: 0
   sinkSpeed: 2.5
   scoreValue: 10
+  ammoBox: {fileID: 1823434922173122, guid: 314f7e7c935997d46b5d0108204505cd, type: 2}
 --- !u!135 &135209789835522788
 SphereCollider:
   m_ObjectHideFlags: 1

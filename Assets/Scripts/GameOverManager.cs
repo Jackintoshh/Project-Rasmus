@@ -27,7 +27,7 @@ public class GameOverManager : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(1);
             }
             
             

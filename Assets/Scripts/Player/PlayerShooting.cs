@@ -63,7 +63,7 @@ public class PlayerShooting : MonoBehaviour
         {
 
             ammo--;
-            AmmoManager.ammo--;
+            //AmmoManager.ammo--;
             timer = 0f;
 
             //gunAudio.Play ();

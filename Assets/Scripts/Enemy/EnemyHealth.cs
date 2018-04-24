@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
     public int currentHealth;
     public float sinkSpeed = 2.5f;
     public int scoreValue = 10;
+    public GameObject ammoBox;
     //public AudioClip deathClip;
 
 
@@ -15,6 +17,9 @@ public class EnemyHealth : MonoBehaviour
     CapsuleCollider capsuleCollider;
     bool isDead;
     bool isSinking;
+    //GameObject ammoBox;
+    int rng;
+
 
 
     void Awake ()
@@ -23,7 +28,6 @@ public class EnemyHealth : MonoBehaviour
         //enemyAudio = GetComponent <AudioSource> ();
         //hitParticles = GetComponentInChildren <ParticleSystem> ();
         capsuleCollider = GetComponent <CapsuleCollider> ();
-
         currentHealth = startingHealth;
     }
 
@@ -66,7 +70,13 @@ public class EnemyHealth : MonoBehaviour
 
         anim.SetTrigger ("Dead");
 
+        rng = Random.Range(0, 100);
+        if(rng < 25 && rng > 0)
+        {
+            Instantiate(ammoBox, transform.position, transform.rotation);
+        }
         
+
         //enemyAudio.clip = deathClip;
         //enemyAudio.Play ();
     }

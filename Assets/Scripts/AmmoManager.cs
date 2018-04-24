@@ -5,14 +5,18 @@ using UnityEngine.UI;
 
 public class AmmoManager : MonoBehaviour
 {
-    public static int ammo;
+    public int ammo;
 
 
     Text text;
+    GameObject player;
+    int maxAmmo = 30;
+    int currentAmmo = 0;
 
 
     void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         text = GetComponent<Text>();
         ammo = PlayerShooting.ammo;
     }
@@ -20,7 +24,23 @@ public class AmmoManager : MonoBehaviour
 
     void Update()
     {
+        ammo = PlayerShooting.ammo;
         text.text = "Ammo: " + ammo + "/30";
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == player)
+        {
+            currentAmmo = maxAmmo - ammo;
+
+            for (int i = 0; i < currentAmmo; i++) 
+            {
+                PlayerShooting.ammo++;
+            }
+            Destroy(gameObject, 0.1f);
+        }
+       
     }
 }
 
