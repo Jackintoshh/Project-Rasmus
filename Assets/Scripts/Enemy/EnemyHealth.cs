@@ -71,7 +71,7 @@ public class EnemyHealth : MonoBehaviour
         anim.SetTrigger ("Dead");
 
         rng = Random.Range(0, 100);
-        if(rng < 25 && rng > 0)
+        if(rng < 30 && rng > 0)
         {
             Instantiate(ammoBox, transform.position, transform.rotation);
         }

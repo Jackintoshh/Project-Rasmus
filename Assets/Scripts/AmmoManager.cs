@@ -32,16 +32,17 @@ public class AmmoManager : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            if (ammo < 30)
+            /*if (ammo < 30)
             {
                 currentAmmo = maxAmmo - ammo;
 
                 for (int i = 0; i < currentAmmo; i++)
                 {
-                    PlayerShooting.ammo++;
-                }
-                Destroy(gameObject, 0.1f);
-            }
+                */
+            PlayerShooting.ammo += maxAmmo;
+              //  }
+                Destroy(gameObject);
+            //}
         }
        
     }
