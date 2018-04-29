@@ -25,7 +25,7 @@ public class AmmoManager : MonoBehaviour
     void Update()
     {
         ammo = PlayerShooting.ammo;
-        text.text = "Ammo: " + ammo + "/30";
+        text.text = "Ammo: " + ammo;
     }
 
     void OnTriggerEnter(Collider other)
